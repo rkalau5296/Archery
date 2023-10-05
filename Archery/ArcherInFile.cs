@@ -1,6 +1,6 @@
 ﻿namespace Archery
 {
-    public class ArcherInFile : ArcheryBase
+    public class ArcherInFile : ArcherBase
     {
         private const string fileName = "point.txt";
         public override event PointAddedDelegate PointAdded;

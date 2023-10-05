@@ -1,12 +1,12 @@
 ﻿namespace Archery
 {
-    public abstract class ArcheryBase : IArcher
+    public abstract class ArcherBase : IArcher
     {
         public delegate void PointAddedDelegate(object sender, EventArgs args);
 
         public abstract event PointAddedDelegate PointAdded;        
 
-        public ArcheryBase(string name, string surname)
+        public ArcherBase(string name, string surname)
         {
             this.Name = name;
             this.Surname = surname;

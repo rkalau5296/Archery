@@ -1,4 +1,4 @@
-﻿using static Archery.ArcheryBase;
+﻿using static Archery.ArcherBase;
 
 namespace Archery
 {

@@ -1,6 +1,6 @@
 ﻿namespace Archery
 {
-    public class ArcherInMemory : ArcheryBase
+    public class ArcherInMemory : ArcherBase
     {
         public override event PointAddedDelegate PointAdded;
         public ArcherInMemory(string name, string surname) : base(name, surname)
