@@ -18,6 +18,6 @@
         public abstract void AddPoint(string grade);
         public abstract void AddPoint(char grade);        
         public abstract void AddPoint(long grade);
-        public abstract Statistics GetStatistics();
+        public abstract Statistics GetStatistics();        
     }
 }

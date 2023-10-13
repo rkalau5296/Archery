@@ -24,7 +24,6 @@ while (true)
         Console.WriteLine($"Exception Catched: {ex.Message}");
     }
 }
-archer.AddPoint(0.6f);
 Statistics statistics = archer.GetStatistics();
 
 Console.WriteLine($"Min: {statistics.Min}");

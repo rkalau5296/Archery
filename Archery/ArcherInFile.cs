@@ -4,18 +4,20 @@
     {
         private const string fileName = "point.txt";
         public override event PointAddedDelegate PointAdded;
-
-        private List<float> points = new();
+        
         public ArcherInFile(string name, string surname)
             : base(name, surname)
         {
         }
 
-        public override void AddPoint(float grade)
+        public override void AddPoint(float point)
         {
-            if (grade > 0 && grade <= 100)
+            if (point > 0 && point <= 100)
             {
-                using var writer = File.AppendText(fileName);
+                using (var writer = File.AppendText(fileName))
+                {
+                    writer.WriteLine(point);
+                }
                 if (PointAdded != null)
                 {
                     PointAdded(this, new EventArgs());
@@ -23,7 +25,7 @@
             }
             else
             {
-                throw new Exception("Invalid grade value");
+                throw new Exception("Invalid point value");
             }
         }
         public override void AddPoint(string point)
@@ -43,23 +45,23 @@
             {
                 case 'A':
                 case 'a':
-                    this.points.Add(100);
+                    this.AddPoint(100);
                     break;
                 case 'B':
                 case 'b':
-                    this.points.Add(80);
+                    this.AddPoint(80);
                     break;
                 case 'C':
                 case 'c':
-                    this.points.Add(60);
+                    this.AddPoint(60);
                     break;
                 case 'D':
                 case 'd':
-                    this.points.Add(40);
+                    this.AddPoint(40);
                     break;
                 case 'E':
                 case 'e':
-                    this.points.Add(20);
+                    this.AddPoint(20);
                     break;
                 default:
                     throw new Exception("Wrong letter");
