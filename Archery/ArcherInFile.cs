@@ -27,51 +27,7 @@
             {
                 throw new Exception("Invalid point value");
             }
-        }
-        public override void AddPoint(string point)
-        {
-            if (float.TryParse(point, out _))
-            {
-                AddPoint(float.Parse(point.ToString()));
-            }
-            else
-            {
-                throw new Exception("String is not float");
-            }
-        }
-        public override void AddPoint(char point)
-        {
-            switch (point)
-            {
-                case 'A':
-                case 'a':
-                    this.AddPoint(100);
-                    break;
-                case 'B':
-                case 'b':
-                    this.AddPoint(80);
-                    break;
-                case 'C':
-                case 'c':
-                    this.AddPoint(60);
-                    break;
-                case 'D':
-                case 'd':
-                    this.AddPoint(40);
-                    break;
-                case 'E':
-                case 'e':
-                    this.AddPoint(20);
-                    break;
-                default:
-                    throw new Exception("Wrong letter");
-            }
-        }
-       
-        public override void AddPoint(long point)
-        {
-            AddPoint((float)point);
-        }
+        }        
         public override Statistics GetStatistics()
         {
             Statistics statistics = new();
